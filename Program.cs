@@ -46,7 +46,7 @@ namespace Revisao
                         }
                         break;
                     case "3":
-                       decimal notaTotal = 0;
+                        decimal notaTotal = 0;
                         var nrAlunos = 0;
 
                         for (int i = 0; i < alunos.Length; i++)
@@ -59,7 +59,30 @@ namespace Revisao
                         }
 
                         var mediaGeral = notaTotal / nrAlunos;
-                        Console.WriteLine($"MEDIA GERAL: {mediaGeral} ");
+                        Conceito condeitoGeral;
+
+                        if(mediaGeral < 2)
+                        {
+                            condeitoGeral = Conceito.E;
+                        }
+                        else if (mediaGeral < 4)
+                        {
+                            condeitoGeral = Conceito.D;
+                        }
+                        else if (mediaGeral < 6)
+                        {
+                            condeitoGeral = Conceito.C;
+                        }
+                        else if (mediaGeral < 8)
+                        {
+                            condeitoGeral = Conceito.B;
+                        }
+                        else 
+                        {
+                            condeitoGeral = Conceito.A;
+                        }
+
+                        Console.WriteLine($"MEDIA GERAL: {mediaGeral} - CONCEITO: {condeitoGeral}");
                         break;
                     default:
                         throw new ArgumentOutOfRangeException();
