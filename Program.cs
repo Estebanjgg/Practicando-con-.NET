@@ -37,7 +37,17 @@ namespace Revisao
 
                         break;
                     case "2":
-                        //TODO: LISTAR ALUNOS   
+                        foreach (var a in alunos)
+                        {
+                            if (!string.IsNullOrEmpty(a.Nome))
+                            {
+                                Console.WriteLine($"ALUNO: {a.Nome} - NOTA {a.Nota}");
+                            }
+                            {
+                                Console.WriteLine($"ALUNO: {a.Nome} - NOTA: {a.Nota}");
+                            }
+
+                        }
                         break;
                     case "3":
                         //TODO: CALCULAR MEDIA GERAL  
